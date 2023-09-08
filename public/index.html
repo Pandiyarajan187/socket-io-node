@@ -1,0 +1,43 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket</title>
+</head>
+<body>
+  <h1>Message</h1>
+  <input type="text" id="messageInput" placeholder="Type your message">
+  <button onclick="sendMessage()">Send</button>
+  <ul id="messageList"></ul>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Connect to the server using Socket.io
+    const socket = io();
+
+    // Get references to the input and list elements
+    const messageInput = document.getElementById('messageInput');
+    const messageList = document.getElementById('messageList');
+
+    // Function to handle sending messages
+    function sendMessage() {
+      const message = messageInput.value;
+      messageInput.value = '';
+
+    //   Send the message to the server with the 'chat message' event
+      socket.emit('chat message', message);
+    }
+
+    // Function to handle receiving messages and update the list
+    function getMessage(message) {
+      const li = document.createElement('li');
+      li.textContent = message;
+      messageList.appendChild(li);
+    }
+
+    // Listen for the 'chat message' event and update the list when a new message arrives
+    socket.on('chat message', getMessage);
+  </script>
+</body>
+</html> -->
